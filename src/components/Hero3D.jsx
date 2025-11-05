@@ -6,7 +6,7 @@ export default function Hero3D() {
       {/* Interactive 3D scene */}
       <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/7mYH3l8z0q7Jk0i3/scene.splinecode"
+          scene="https://prod.spline.design/6YVwBEmc6kAMPxQF/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
       </div>
