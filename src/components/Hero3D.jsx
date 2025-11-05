@@ -1,14 +1,26 @@
 import Spline from '@splinetool/react-spline';
+import ErrorBoundary from './ErrorBoundary.jsx';
 
 export default function Hero3D() {
   return (
     <section className="relative min-h-[92vh] w-full overflow-hidden bg-black pt-20">
       {/* Interactive 3D scene */}
       <div className="absolute inset-0">
-        <Spline
-          scene="https://prod.spline.design/6YVwBEmc6kAMPxQF/scene.splinecode"
-          style={{ width: '100%', height: '100%' }}
-        />
+        <ErrorBoundary
+          fallback={
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-b from-black to-zinc-900">
+              <div className="text-center">
+                <h2 className="text-xl font-semibold text-white">Interactive preview unavailable</h2>
+                <p className="mt-2 text-sm text-white/70">Please refresh or try again later.</p>
+              </div>
+            </div>
+          }
+        >
+          <Spline
+            scene="https://prod.spline.design/VyGeZv58yuk8j7Yy/scene.splinecode"
+            style={{ width: '100%', height: '100%' }}
+          />
+        </ErrorBoundary>
       </div>
 
       {/* Gradient overlays (do not block interaction) */}
