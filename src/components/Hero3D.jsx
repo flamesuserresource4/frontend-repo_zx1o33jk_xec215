@@ -1,35 +1,41 @@
-import React from 'react';
 import Spline from '@splinetool/react-spline';
 
 export default function Hero3D() {
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden bg-black" aria-label="Hero">
+    <section className="relative min-h-[92vh] w-full overflow-hidden bg-black pt-20">
+      {/* Interactive 3D scene */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/m8wpIQzXWhEh9Yek/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline
+          scene="https://prod.spline.design/7mYH3l8z0q7Jk0i3/scene.splinecode"
+          style={{ width: '100%', height: '100%' }}
+        />
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black to-transparent" />
+      {/* Gradient overlays (do not block interaction) */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_10%,rgba(16,185,129,0.25),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-black" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 flex flex-col items-start">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3 py-1 text-xs text-white/80 backdrop-blur">
-          <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-          Interactive 3D comparison
-        </span>
-        <h1 className="mt-6 text-4xl sm:text-6xl font-semibold tracking-tight text-white">
-          Find your perfect ride
-        </h1>
-        <p className="mt-4 max-w-2xl text-base sm:text-lg text-white/80">
-          justDriver asks a few simple questions and recommends the best cars for your lifestyle.
-          Explore every detail in an immersive 3D view and compare models side by side.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <a href="#start" className="inline-flex items-center rounded-md bg-white text-black px-5 py-3 font-medium hover:bg-white/90 transition">
-            Start your fit quiz
-          </a>
-          <a href="#compare" className="inline-flex items-center rounded-md bg-white/10 px-5 py-3 font-medium text-white hover:bg-white/20 transition">
-            Try the 3D demo
-          </a>
+      {/* Content */}
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 pb-24 pt-32 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+            Find your perfect car. Just drive.
+          </h1>
+          <p className="mt-6 text-lg leading-7 text-white/80">
+            Take a quick fit quiz and we’ll match you with cars that fit your lifestyle, budget, and vibe.
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-x-4">
+            <a
+              href="#cta"
+              className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-black shadow-sm hover:bg-white/90"
+            >
+              Start the fit quiz
+            </a>
+            <a href="#how" className="text-sm font-semibold leading-6 text-white/80 hover:text-white">
+              How it works <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
